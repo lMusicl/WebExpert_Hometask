@@ -304,55 +304,34 @@ body {
 }
 
 .calculator-btn {
-    position: relative;
     display: inline-block;
     padding: 20px 40px;
     border: none;
     border-radius: 1000px;
-    background: linear-gradient(90deg, #B72121, #E74C3C);
+    background: linear-gradient(90deg, #911812 0%, #e1261c 100%);
     color: var(--text);
     font-family: Sora-Bold, sans-serif;
     font-size: 18px;
     line-height: 20px;
     cursor: pointer;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-    overflow: hidden;
-    z-index: 0;
-    transition: box-shadow .3s ease;
-}
-
-/* Псевдоэлемент для hover-градиента */
-.calculator-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(90deg, #911812 0%, #e1261c 100%);
-    opacity: 0;
-    transition: opacity .3s ease;
-    z-index: -1;
-}
-
-.calculator-btn:hover::before {
-    opacity: 1;
+    box-shadow: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: box-shadow .3s linear;
 }
 
 .calculator-btn:hover {
-    box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.25),
-                0 4px 10px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.25), 0 4px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
-/* ACTIVE — «вдавлено» внутрь */
+/* ACTIVE — «вдавлено» внутрь, внешняя тень меньше, сильная внутренняя */
 .calculator-btn:active {
-    box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.25),
-                0 0 10px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.25), 0 0 10px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* Фокус-кольцо */
+/* Доступность: фокус-кольцо только с клавиатуры */
 .calculator-btn:focus-visible {
     outline: 0;
-    box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.25),
-                0 0 10px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.25), 0 0 10px 0 rgba(0, 0, 0, 0.25);
 }
 
 .divider {
