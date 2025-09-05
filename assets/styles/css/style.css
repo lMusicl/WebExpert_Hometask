@@ -1,0 +1,372 @@
+@font-face {
+    src: url("../fonts/Sora-Bold.ttf");
+    font-family: Sora-Bold;
+}
+
+@font-face {
+    src: url("../fonts/Sora-Regular.ttf");
+    font-family: Sora-Regular;
+}
+
+:root {
+    --bg-grad: linear-gradient(90deg, #2B303A 0%, #3F4756 100%);
+    --text: #FFFFFF;
+    --muted: #7A818E;
+    --accent: #E1261C;
+    --card: #FFFFFF;
+    --stroke: #E9EDF4;
+    --cut: 20px;
+    --red-grad: linear-gradient(90deg, #911812 0%, #E1261C 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Sora-Regular, sans-serif;
+    background: var(--bg-grad);
+    color: var(--text);
+}
+
+.layout {
+    max-width: 1200px;
+    margin: 100px auto 0 auto;
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: 660px 320px;
+    gap: 100px;
+}
+
+.info-title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-family: Sora-Bold, sans-serif;
+    line-height: 50px;
+    letter-spacing: -0.02em;
+}
+
+.info-text {
+    margin-bottom: 40px;
+}
+
+.text {
+    color: var(--text);
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.info-two-col-block {
+    display: grid;
+    grid-template-columns: 380px 240px;
+    gap: 40px;
+}
+
+.info-two-col-block-subtitle {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-family: Sora-Bold, sans-serif;
+    line-height: 35px;
+    letter-spacing: -0.02em;
+}
+
+.info-two-col-block-text {
+    margin-bottom: 20px;
+}
+
+.info-two-col-block-checklist {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.info-two-col-block-checklist > li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.info-two-col-block-checklist > li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 16px;
+    height: 4px;
+    background: var(--red-grad);
+}
+
+.info-two-col-block-checklist-subchecklist {
+    margin-top: 10px;
+}
+
+.info-two-col-block-checklist li ul,
+.info-two-col-block-checklist .info-two-col-block-checklist-subchecklist{
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-two-col-block-checklist li ul > li,
+.info-two-col-block-checklist .info-two-col-block-checklist-subchecklist > li{
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.info-two-col-block-checklist li ul > li::before,
+.info-two-col-block-checklist .info-two-col-block-checklist-subchecklist > li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 4px;
+    background: linear-gradient(90deg, #D3DAE8 0%, #A7B7D8 100%);
+}
+
+.image-wrap {
+    background-image: url("../../images/image.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 4px;
+    height: 180px;
+    width: 100%;
+}
+
+.aside {
+    align-self: start;
+}
+
+.card {
+    background: var(--card);
+    color: #111317;
+    border: 1px solid var(--stroke);
+    padding: 80px 20px;
+
+    clip-path: polygon(
+            var(--cut) 0,
+            calc(100% - var(--cut)) 0,
+            100% var(--cut),
+            100% calc(100% - var(--cut)),
+            calc(100% - var(--cut)) 100%,
+            var(--cut) 100%,
+            0 calc(100% - var(--cut)),
+            0 var(--cut)
+    );
+}
+
+.card-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: Sora-Bold, sans-serif;
+    line-height: 25px;
+    letter-spacing: -0.02em;
+}
+
+.calculator-label {
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+.calculator-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calculator-input-wrapper input {
+    flex: 1;
+    height: 50px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    background:
+            linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(90deg, #D3DAE8 0%, #A7B7D8 100%) border-box;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    font-size: 18px;
+    line-height: 1;
+    -moz-appearance: textfield;
+    padding-left: 10px;
+    padding-right: 45px;
+}
+
+.calculator-input-wrapper input[type=number]::-webkit-inner-spin-button,
+.calculator-input-wrapper input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.calculator-input-wrapper input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.calculator-input-wrapper input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(110,168,255,.25);
+}
+
+.calculator-input-suffix {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 800;
+    pointer-events: none;
+}
+
+.calculator-error{
+    margin: -15px 0 14px;
+    font-size: 14px;
+    color: var(--accent);
+}
+
+.calculator-checkbox{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    margin: 12px 0 18px;
+    color: #111317;
+}
+
+.calculator-checkbox input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(50%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.calculator-checkbox-box{
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 2px solid transparent;
+    background:
+            linear-gradient(#fff,#fff) padding-box,
+            linear-gradient(90deg,#D3DAE8 0%, #A7B7D8 100%) border-box;
+    box-shadow: 0px 2px 4px 0px #0000001A;
+    position: relative;
+    flex: 0 0 auto;
+    transition: background .15s ease-in-out;
+}
+
+.calculator-checkbox input:focus-visible + .calculator-checkbox-box{
+    outline: 2px solid #6EA8FF;
+    outline-offset: 2px;
+}
+
+.calculator-checkbox input:checked + .calculator-checkbox-box{
+    background:
+            linear-gradient(#fff,#fff) padding-box,
+            linear-gradient(90deg,#D3DAE8 0%, #A7B7D8 100%) border-box;
+}
+
+.calculator-checkbox input:checked + .calculator-checkbox-box::after{
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: -2px;
+    width: 6px;
+    height: 12px;
+    border: 3px solid #111317;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    border-radius: 1px;
+}
+
+.calculator-checkbox-text{
+    line-height: 20px;
+}
+
+.calculator-btn {
+    display: inline-block;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 1000px;
+    background: linear-gradient(90deg, #B72121, #E74C3C);
+    color: var(--text);
+    font-family: Sora-Bold, sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    cursor: pointer;
+    box-shadow: none;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--stroke);
+    margin: 20px -20px;
+}
+
+.compensation-grid {
+    display: grid;
+    gap: 20px;
+    text-align: center;
+    grid-template-columns: 130px 130px;
+    justify-content: space-between;
+}
+
+.compensation-heading {
+    font-size: 14px;
+    line-height: 15px;
+    color: #111317;
+}
+
+.compensation-days {
+    font-family: Sora-Bold, sans-serif;
+    margin-bottom: 10px;
+}
+
+.compensation-amount {
+    font-size: 18px;
+    line-height: 20px;
+    font-family: Sora-Bold, sans-serif;
+}
+
+.compensation-sub {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 15px;
+}
+.total {
+    text-align: center;
+}
+.total-label {
+    margin: 0;
+    font-size: 14px;
+    line-height: 15px;
+    margin-bottom: 5px;
+}
+.total-sum {
+    margin: 0;
+    font-size: 24px;
+    font-family: Sora-Bold, sans-serif;
+    line-height: 30px;
+}

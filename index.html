@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>WebExpert Hometask</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="assets/styles/css/style.css"/>
+    <link rel="stylesheet" href="assets/styles/css/adaptive.css"/>
+</head>
+<body>
+<main class="layout">
+    <section class="info">
+        <h1 class="info-title">Quam Tristique Condimentum</h1>
+        <p class="info-text text">
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            <span class="accent">Curabitur blandit</span> tempus porttitor. Integer posuere erat a ante venenatis
+            dapibus posuere velit aliquet. Vestibulum id ligula porta felis euismod semper.
+        </p>
+
+        <div class="info-two-col-block">
+            <div>
+                <h2 class="info-two-col-block-subtitle">
+                    Fringilla Euismod Adipiscing Ipsum
+                </h2>
+                <p class="info-two-col-block-text text">
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed.
+                </p>
+
+                <ul class="info-two-col-block-checklist">
+                    <li class="info-two-col-block-checklist-item">
+                        Tellus Ullamcorper Inceptos
+                    </li>
+                    <li class="info-two-col-block-checklist-item">
+                        Magna Condimentum
+                        <ul class="info-two-col-block-checklist-subchecklist">
+                            <li class="info-two-col-block-checklist-subchecklist-item">
+                                Mattis Tristique
+                            </li>
+                            <li class="info-two-col-block-checklist-subchecklist-item">
+                                Pharetra Pellentesque Dapibus
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="info-two-col-block-checklist-item">
+                        Aenean Inceptos
+                    </li>
+                    <li class="info-two-col-block-checklist-item">
+                        Parturient Bibendum
+                    </li>
+                </ul>
+            </div>
+
+            <div class="image-wrap"></div>
+        </div>
+    </section>
+
+    <aside class="aside">
+        <section class="card" aria-labelledby="calcTitle">
+            <h2 id="calcTitle" class="card-title">
+                Compensation Calculator
+            </h2>
+
+            <form class="calculator-form" autocomplete="off">
+                <label class="calculator-label" for="income">
+                    Average income
+                </label>
+                <div class="calculator-input-wrapper">
+                    <input type="number" id="income" name="income" placeholder="1500" inputmode="decimal"/>
+                    <span class="calculator-input-suffix">€</span>
+                </div>
+
+                <label class="calculator-label" for="days">
+                    Days on sick-leave
+                </label>
+
+                <div class="calculator-input-wrapper">
+                    <input type="number" id="days" name="days" placeholder="7" inputmode="numeric"/>
+                    <span class="calculator-input-suffix">days</span>
+                </div>
+
+                <p id="daysError" class="calculator-error" aria-live="polite" hidden></p>
+
+                <label class="calculator-checkbox" for="tb">
+                    <input type="checkbox" id="tb" name="tuberculosis">
+                    <span class="calculator-checkbox-box" aria-hidden="true"></span>
+                    <span class="calculator-checkbox-text">
+                        I have tuberculosis
+                    </span>
+                </label>
+
+                <button class="calculator-btn" type="submit">Calculate</button>
+            </form>
+
+            <hr class="divider"/>
+
+            <div class="compensation-grid" aria-labelledby="compTitle">
+                <article class="compensation-col">
+                    <h3 class="compensation-heading">
+                        The employer <br>compensates
+                    </h3>
+                    <p class="compensation-days">
+                        <strong><span class="js-emp-days">0</span> days</strong>
+                    </p>
+                    <p class="compensation-amount js-emp-amount">0,00€</p>
+                    <p class="compensation-sub">
+                        Daily allowance<br><strong><span class="js-daily">0,00 €</span></strong>
+                    </p>
+                </article>
+
+                <article class="compensation-col">
+                    <h3 class="compensation-heading">
+                        Health Insurance <br>compensates
+                    </h3>
+                    <p class="compensation-days">
+                        <strong><span class="js-hif-days">0</span> days</strong>
+                    </p>
+                    <p class="compensation-amount js-hif-amount">
+                        0,00€
+                    </p>
+                    <p class="compensation-sub">
+                        Daily allowance<br><strong><span class="js-daily-2">0,00 €</span></strong>
+                    </p>
+                </article>
+            </div>
+
+            <hr class="divider"/>
+
+            <div class="total" id="compTitle">
+                <p class="total-label">Compensation total for <span class="js-total-days">0</span> days (net)</p>
+                <p class="total-sum js-total">0,00€</p>
+            </div>
+        </section>
+    </aside>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/scripts/script.js"></script>
+</body>
+</html>
